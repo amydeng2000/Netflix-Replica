@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from '../svg/logo.svg';
 import { NavLink, Link } from 'react-router-dom';
 import styled from 'styled-components'
+import { Icon } from 'react-icons-kit'
+import {thinRight} from 'react-icons-kit/entypo/thinRight'
 
 class Header extends Component {
     render() {
@@ -22,7 +24,10 @@ class Header extends Component {
                 </div>
                 <div className="call-to-action">
                     <input className="email-input" type="email" data-uia="field-email" autocomplete="email" maxlength="50" minlength="5" style={{fontSize:28}}/>
-                    <Link to="/login" className="main-offer-btn">GET STARTED</Link>
+                    <Link to="/login" className="main-offer-btn">
+                    GET STARTED
+                    <Icon className="Icon" icon={thinRight} size={20} />
+                    </Link>
                 </div>
 
 
@@ -58,8 +63,8 @@ const HeaderComponent = styled.div`
         background: var(--main-red);
         position: abosolute;
         translate: transform(-50%, -50%);
-        cursor: pointer;
         transition: background 0.2s ease-in;
+        cursor: pointer;
         &:hover {
             background: var(--main-red-hover);
         }
@@ -106,24 +111,25 @@ const HeaderComponent = styled.div`
         align-content: center;
         text-align: center;
         flex-direction: row;
+        flex-wrap: wrap;
         z-index: 1;
     }
 
     .email-input {
-        width: 65%;
+        width: 450px;
+        height: 65px;
         position: relative;
         // margin: 4.5rem auto 0;
         display: flex;
         // justify-content: center;
         // align-content: center;
         text-align: left;
-        float: left;
         z-index: 1;
     }
 
     // main offer btn
     .main-offer-btn {
-        width: 30%;
+        width: 250px;
         display:inline-block;
         position: relative;
         background: var(--main-red);
@@ -136,7 +142,14 @@ const HeaderComponent = styled.div`
         box-shadow: 0 1px 0 rgba(0,0,0,0.45);
         transition: background 0.2s ease-in;
         cursor: pointer;
-        float: right;
+        &:hover {
+            background: var(--main-red-hover);
+        }
+    }
+
+    .Icon svg {
+        // vertical-align: ;
+        margin-left: 0.8rem;
     }
 `;
 
