@@ -23,10 +23,11 @@ class Header extends Component {
                     <SubTitle2>Ready to watch? Enter your email to create or restart your membership.</SubTitle2>
                 </div>
                 <div className="call-to-action">
-                    <input className="email-input" type="email" data-uia="field-email" autocomplete="email" maxlength="50" minlength="5" style={{fontSize:28}}/>
+                    <input className="email-input" type="email" style={{fontSize:20}}/>
+                    <label className="email-label">Email address</label>
                     <Link to="/login" className="main-offer-btn">
-                    GET STARTED
-                    <Icon className="Icon" icon={thinRight} size={20} />
+                        GET STARTED
+                        <Icon className="Icon" icon={thinRight} size={16} />
                     </Link>
                 </div>
 
@@ -61,7 +62,7 @@ const HeaderComponent = styled.div`
         border-radius: 0.1875rem;
         font-size: 1rem;
         background: var(--main-red);
-        position: abosolute;
+        position: absolute;
         translate: transform(-50%, -50%);
         transition: background 0.2s ease-in;
         cursor: pointer;
@@ -79,7 +80,7 @@ const HeaderComponent = styled.div`
 
     // header content
     .header-content {
-        width: 40%;
+        width: 40rem;
         position: relative;
         margin: 4.5rem auto 0;
         display: flex;
@@ -91,7 +92,7 @@ const HeaderComponent = styled.div`
     }
 
     .call-to-action-content {
-        width: 60%;
+        width: 40rem;
         position: relative;
         margin: 0.3rem auto 0;
         display: flex;
@@ -103,9 +104,9 @@ const HeaderComponent = styled.div`
     }
 
     .call-to-action {
-        width: 60%;
+        width: 50rem;
         position: relative;
-        margin: 0 auto 0;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
         align-content: center;
@@ -117,19 +118,39 @@ const HeaderComponent = styled.div`
 
     .email-input {
         width: 450px;
-        height: 65px;
+        height: 60px;
         position: relative;
-        // margin: 4.5rem auto 0;
         display: flex;
-        // justify-content: center;
-        // align-content: center;
+        justify-content: center;
+        align-content: center;
         text-align: left;
         z-index: 1;
+        padding: 0.9rem 0.625rem 0;
+        // margin-top: 1rem;
+    }
+
+    //label
+    div label {
+        position: absolute;
+        top: 1.25rem;
+        left 3.875rem;
+        poiner-events: none;
+        color: #8a8a8a;
+        font-size: 1rem;
+        transition: transform 150ms ease-out, font-size 150ms ease-out;
+        z-index: 1;
+    }
+
+    input:focus ~label {
+        top: 0.5rem;
+        font-size: 0.7rem;
+        font-weight: bold;
     }
 
     // main offer btn
     .main-offer-btn {
         width: 250px;
+        height: 60px;
         display:inline-block;
         position: relative;
         background: var(--main-red);
@@ -145,6 +166,7 @@ const HeaderComponent = styled.div`
         &:hover {
             background: var(--main-red-hover);
         }
+        // margin-top: 1rem;
     }
 
     .Icon svg {
